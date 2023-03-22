@@ -1,0 +1,56 @@
+<%- include('./partials/head.ejs') %>
+    <form action="/" method="post">
+        <fieldset>
+            <div>
+                <span></span>
+                <button type="file" id="fileUpload" required aria-required="verplicht"
+                    value="<% locals.fotos ?? '' %>"></button>
+                <label for="fileUpload"></label>
+                <p>Upload de afbeelding van je stekje of sleep het hierheen</p>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gegevens stekje</legend>
+            <div>
+                <label for="naam">Naam stekje</label>
+                <input type="text" name="naam" id="name" placeholder="Hoe heet jouw stekje?"
+                    value="<% locals.naam ?? '' %>" required><span>*Verplicht</span>
+            </div>
+
+            <div>
+                <label for="voeding">Voeding</label>
+                <input type="text" name="voeding" id="voeding" placeholder="Hoeveel voeding heeft jouw stekje nodig?"
+                    value="<% locals.voeding ?? '' %>">
+            </div>
+
+            <div>
+                <label for="giftig">Giftig</label>
+                <input type="text" name="giftig" id="giftig" placeholder="Is jouw plantje giftig?"
+                    value="<% locals.giftig ?? '' %>">
+            </div>
+
+            <div>
+                <label for="verpotten">Verpotten</label>
+                <input type="text" name="verpotten" id="verpotten" placeholder="Hoevaak moet jouw stekje verpot worden?"
+                    value="<% locals.verpotten ?? '' %>">
+            </div>
+
+            <div>
+                <label for="landvanherkomst">Land van herkomst:</label>
+                <input type="text" name="landvanherkomst" id="landvanherkomst" placeholder="..."
+                    value="<% locals.landvanherkomst ?? '' %>" />
+            </div>
+
+            <div>
+                <label for="discripe">Omschrijf jouw stekje</label>
+                <textarea type="text" rows="4" minlength="18" maxlength="200" required
+                    placeholder="De plant is nog maar 1 week oud, helaas door de allergieën van mijn poezen moet ik afscheid nemen van deze prachtige plant......."></textarea>
+            </div>
+        </fieldset>
+        <button type="submit" name="submit" value="opslaan"></button>
+        <div><span></span>
+            <a href="/">Terug naar de stekjes</a>
+        </div>
+    </form>
+    <%- include('./partials/foot.ejs') %>
