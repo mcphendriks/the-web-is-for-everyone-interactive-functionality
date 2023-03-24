@@ -1,6 +1,7 @@
 import express from "express";
 import indexRoute from "./routes/index.js";
-import plantRoute from "./routes/plant.js";
+import plantRoute from "./routes/plantNew.js";
+import plantForm from "./routes/plantForm.js";
 
 // Maak een nieuwe express app
 const server = express();
@@ -8,20 +9,21 @@ const server = express();
 // Stel het poortnummer in
 server.set("port", process.env.PORT || 8080);
 
-// Stel de view engine in
+// Stel de views in
 server.set("view engine", "ejs");
 server.set("views", "./views");
 
 // Stel de public map in
 server.use(express.static("public"));
 
-// Stel afhandeling van formulieren in
+// na submit Stel afhandeling van formulieren in
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
-// Stel de routes in
+// Stel de files routes in
 server.use("/", indexRoute);
-server.use("/stekjes", plantRoute);
+server.use("/stek", plantRoute);
+server.use("/aanmelden", plantForm);
 
 // Start met luisteren
 server.listen(server.get("port"), () => {

@@ -1,10 +1,10 @@
 <%- include('./partials/head.ejs') %>
+
     <form action="/" method="post">
         <fieldset>
             <div>
                 <span></span>
-                <button type="file" id="fileUpload" required aria-required="verplicht"
-                    value="<% locals.fotos ?? '' %>"></button>
+                <input type="file" id="fileUpload" required value="<% locals.fotos ?? '' %>">
                 <label for="fileUpload"></label>
                 <p>Upload de afbeelding van je stekje of sleep het hierheen</p>
             </div>
@@ -48,7 +48,7 @@
                     placeholder="De plant is nog maar 1 week oud, helaas door de allergieën van mijn poezen moet ik afscheid nemen van deze prachtige plant......."></textarea>
             </div>
         </fieldset>
-        <button type="submit" name="submit" value="opslaan"></button>
+        <button type="submit">aanmelden</button>
         <div><span></span>
             <a href="/">Terug naar de stekjes</a>
         </div>
