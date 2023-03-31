@@ -1,30 +1,78 @@
 <%- include('./partials/head.ejs') %>
     <main>
-        <section class="homepage-container-intro">
-            <div class="homepage-intro-content">
+        <section class="headline">
+            <div class="headline-content">
                 <h1>Hi, Stekje ruilen of doneren?</h1>
                 <p>
                     Ben je op zoek naar een prachtig nieuw plantje om aan je collectie toe te
                     voegen? Of heb je al een aantal groene vrienden thuis en wil je deze
                     ruilen met je mede buurtbewoners? Dan ben je hier aan het perfecte
-                    adres!Je kunt nu eenvoudig je stekje uploaden of reserveren en deze
+                    adres! Je kunt nu eenvoudig je stekje uploaden of reserveren en deze
                     ophalen bij de OBA in de gezellige Linnaeusstraat. Waar wacht je nog op?
                     Laat je groene vingers wapperen en voeg een nieuwe aanwinst toe aan je
                     verzameling!
                 </p>
-                <div class="homepage-intro-buttons"></div>
-                <button aria-label="stekje toevoegen">Stekje doneren</button>
-                <button aria-label="bekijk beschikbare stekjes">Bekijk beschikbaren stekjes</button>
+                <div class="headline-buttons"></div>
+                <a href="/aanmelden" aria-label="stekje toevoegen">Stekje doneren</a>
+                <a href="#stekjes" aria-label="bekijk beschikbare stekjes">Bekijk beschikbaren stekjes</a>
             </div>
             </div>
-            <figure class="homepage-intro-img">
+            <figure class="headline-img">
                 <img src="/asset/plant-9518.png" alt="animatie plantje in beweging" />
             </figure>
         </section>
 
+
+        <section class="bar">
+            <button class="drop-btn" type="button">Filter<span><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                    </svg></span></button>
+            <div class="drop-content">
+                <ul class="drop-list">
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            <span>Voeding</span></label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            <span>Water</span></label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            <span>Giftig</span></label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            <span>Licht</span></label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox">
+                            <span>Standplaats</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <search>
+                <form action="search.php">
+                    <label for="query"><svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 6a8 8 0 1 1 16 0 8 8 0 0 1-16 0zM16.293 16.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414z"
+                                fill="#000" />
+                        </svg></label>
+                    <input id="query" name="q" type="search" placeholder="zoek op stek naam">
+                </form>
+            </search>
+        </section>
         <h2>Beschikbare stekjes</h2>
 
-        <section class="homepage-plant-container">
+        <section class="plant-container" id="stekjes">
             <% stekjes.forEach(stekje=> { %>
                 <article class="plant-card" aria-label="Beschikbaar stekje">
                     <!-- <ul>
@@ -90,11 +138,10 @@
 
         <h2>Plantje ophalen?</h2>
 
-        <section class="homepage-info-container">
-            <div class="homepage-info-content">
-                <div class="homepage-info-list">
-                    <img src="/asset/Identiteit en huisstijl/03_Losse items identiteit/SVG/Buurtcampus 54.svg"
-                        alt="illustratie laptop" />
+        <section class="info-container" id="info-container">
+            <div class="info-content">
+                <div class="info-list">
+                    <img width="50px" height="50px" src="/assets/Buurtcampus 54.svg" alt="illustratie laptop" />
                     <p>
                         Vanaf je luie stoel, bank of hangmat jouw stekje reserveren online of
                         jouw stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
@@ -102,8 +149,8 @@
                     </p>
                 </div>
 
-                <div class="homepage-info-list">
-                    <img src="/asset/Identiteit en huisstijl/03_Losse items identiteit/SVG/Buurtcampus 58.svg"
+                <div class="info-list">
+                    <img width="50px" height="50px" src="/assets/Buurtcampus 58.svg"
                         alt="illustratie buurtcampus locatie" />
                     <p>
                         Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
@@ -112,9 +159,8 @@
                     </p>
                 </div>
 
-                <div class="homepage-info-list">
-                    <img src="/asset/Identiteit en huisstijl/03_Losse items identiteit/SVG/Buurtcampus 59.svg"
-                        alt="illustratie stekje doneren" />
+                <div class="info-list">
+                    <img width="50px" height="50px" src="/assets/Buurtcampus 58.svg" alt="illustratie stekje doneren" />
                     <p>
                         Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
                         stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
@@ -122,9 +168,8 @@
                     </p>
                 </div>
 
-                <div class="homepage-info-list">
-                    <img src="/asset/Identiteit en huisstijl/03_Losse items identiteit/SVG/Buurtcampus 66.svg"
-                        alt="stekje meenemen" />
+                <div class="info-list">
+                    <img width="50px" height="50px" src="/assets/Buurtcampus 66.svg" alt="stekje meenemen" />
                     <p>
                         Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
                         stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
@@ -135,4 +180,5 @@
         </section>
 
     </main>
+
     <%- include('./partials/foot.ejs') %>
