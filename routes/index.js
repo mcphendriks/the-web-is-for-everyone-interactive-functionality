@@ -1,35 +1,17 @@
 import * as dotenv from "dotenv";
 import express from "express";
-import { fetchJson, postJson } from "../helpers/fetchWrapper.js";
+import { fetchJson } from "../helpers/fetchWrapper.js";
 
 dotenv.config();
 
-const index = express.Router();
-// OVERZICHTSPAGINA ROUTE
-index.get("/", (request, response) => {
-  const baseUrl = `${process.env.API_URL}/stekjes`;
+const indexRoute = express.Router();
 
-  fetchJson(baseUrl).then((data) => {
+//  De GET-request haalt gegeven op uit de server.Vervolgens wordt de gebruiker terug gestuurd naar index.ejs PAGE
+indexRoute.get("/", (request, response) => {
+  const url = `${process.env.API_URL}/stekjes`;
+  fetchJson(url).then((data) => {
     response.render("index", data);
   });
 });
 
-// POST FORM NAAR INDEX
-// Roep de API aan met de post methode
-
-index.post("/", (request, response) => {
-  console.log(request.body);
-  const baseUrl = `${process.env.API_URL}/stekjes`;
-  postJson(baseUrl, request.body).then((data) => {
-    if (data.success) {
-      response.redirect("/"); // plant meegeven, message meegeven
-      //  Toon opnieuw het formulier (met waarden) als het niet gelukt is
-    } else {
-      response.render("plantForm", error); // Fail, message meegeven
-    }
-    // })
-    // De waarden uit het formulier (niet de API)
-    console.log(JSON.stringify(data));
-  });
-});
-export default index;
+export default indexRoute;
