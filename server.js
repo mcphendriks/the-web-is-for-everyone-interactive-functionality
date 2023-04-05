@@ -1,7 +1,7 @@
 import express from "express";
 import indexRoute from "./routes/index.js";
+import reservationRoute from "./routes/plantReservation.js";
 import plantRoute from "./routes/plantNew.js";
-import plantForm from "./routes/plantForm.js";
 
 // Maak een nieuwe express app
 const server = express();
@@ -22,8 +22,8 @@ server.use(express.urlencoded({ extended: true }));
 
 // Stel de files routes in
 server.use("/", indexRoute);
-server.use("/stek", plantRoute);
-server.use("/aanmelden", plantForm);
+server.use("/stek", reservationRoute);
+server.use("/aanmelden", plantRoute);
 
 // Start met luisteren
 server.listen(server.get("port"), () => {
