@@ -1,0 +1,87 @@
+/* FORM  */
+
+form,
+.drop-zone {
+  --btn-bg-color: #56704a;
+  margin-inline: auto;
+  width: 60vh;
+}
+
+fieldset {
+  margin-top: 0.75rem;
+  background-color: var(--form-bg-color);
+  border: none;
+  border-radius: 0.5em;
+}
+
+.data-zone label {
+  margin-top: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+select,
+textarea {
+  margin: 0.2em 0;
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  margin-top: 1em;
+  width: 100%;
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  cursor: pointer;
+  background-color: var(--btn-bg-color);
+  font-weight: 600;
+  border-radius: 0.5em;
+  font-size: 16px;
+}
+
+.back-link {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.back-link a,
+svg {
+  color: var(--btn-bg-color);
+  font-weight: 600;
+  fill: #56704a;
+  width: 30px;
+}
+
+/* FORM DRAG AND DROP  */
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40vh;
+}
+.input-file {
+  height: 20em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  position: absolute;
+  all: inset;
+  opacity: 0;
+}
+
+.input-file + .drop-zone-label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: darkgreen;
+  display: inline-block;
+  border-radius: 0.5rem;
+  padding: 1em;
+}
