@@ -50,10 +50,12 @@ button[type="submit"] {
   text-align: center;
 }
 
-.back-link a,
-svg {
+.back-link a {
   color: var(--btn-bg-color);
   font-weight: 600;
+}
+
+.section-social svg {
   fill: #56704a;
   width: 30px;
 }
