@@ -7,6 +7,7 @@ dotenv.config();
 const plantRoute = express.Router();
 
 plantRoute.get("/", (request, response) => {
+  //Deze code zorgt ervoor dat wanneer er een GET-request naar de "/" route van de plantNew.js komt, de "plantNew" sjabloon wordt gerenderd en als een plantNew.ejs wordt geretourneerd.
   response.render("plantNew");
 });
 
