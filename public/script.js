@@ -1,16 +1,15 @@
 // MOBILE NAVIGATION TOGGLE
-document.querySelector(".menu-toggle").addEventListener("click", function () {
-  let nav = document.querySelector("nav");
-  let menuToggle = document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-  nav.classList.toggle("mobile-nav");
-  menuToggle.classList.toggle("is-active");
+menuToggle.addEventListener("click", function () {
+  navLinks.classList.toggle("show");
 });
 
 // DROP DOWN FILTER MENUH
 
 document.addEventListener("DOMContentLoaded", () => {
-  const dropButton = document.querySelector(".drop-btn");
+  const dropButton = document.querySelector(".filter-btn");
   const dropContent = document.querySelector(".drop-list");
 
   dropButton.addEventListener("click", () => {
