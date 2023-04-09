@@ -1,11 +1,11 @@
 :root {
   --bg-clr: #f7fbf6;
-  --text-title-clr: #56704a;
-  --text-paragraph-clr: #56704a;
+  --text-title-clr: #2c4c1c;
+  --text-paragraph-clr: #2c4c1c;
   --filter-bg-clr: #f26f20;
   --filter-text-clr: #fff;
-  --link-btn-clr: #56704a;
-  --link-nav-clr: #56704a;
+  --link-btn-clr: #2c4c1c;
+  --link-nav-clr: #2c4c1c;
   --radius-btn: 0.5em;
   --box-shadow-btn: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
 }
@@ -57,6 +57,7 @@ h3 {
 header {
   width: 100%;
   height: auto;
+  padding: 1em;
   top: 0;
   position: fixed;
   background-color: var(--bg-clr);
@@ -85,6 +86,16 @@ nav ul {
 
 nav li {
   padding: 0 1em 0 1em;
+}
+
+nav li:nth-child(4) {
+  padding: 0.2;
+  background-color: var(--filter-bg-clr);
+  border-radius: var(--radius-btn);
+}
+
+nav li a:nth-child(4) {
+  color: #fff;
 }
 
 ul a {
