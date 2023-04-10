@@ -23,6 +23,10 @@ De website is gebouw volgens progressive enhancement(coding) strategy met de tec
 <!--De gebruiker kan een afbeelding van een plantje toevoegen met behulp van een formulier. -->
 
 ## Kenmerken
+
+Progressive Enhancement is een _code strategy_ waarbij de website eerst wordt gebouwd met basisfunctionaliteit HTML(client-side) get & post methodes (server-side) die werkt op alle apparaten en browsers. Daarna worden er stapsgewijs geavanceerdere( CSS en JS-interacties) functionaliteiten toegevoegd
+
+
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
 **HTML Structuur:**
@@ -75,9 +79,40 @@ Dit is een HTML-formulier met velden voor het uploaden van een afbeelding en het
     </form>
 ```
 
+**Sever-side JS**  (CORE FUNCTIONALITEITEN AFHANDELN FORMULIER)
+
+///
+// // haalt planten gegevens(data) op uit API
+plantRoute.get("/", (request, response) => {
+  response.render("plantNew");
+});
+
+// // Toon het formulier om een nieuw plantje te doneren
+plantRoute.get("/aanmelden", (request, response) => {
+  response.render("plantNew.ejs");
+});
+
+// Handel het versturen van het formulier af
+// Roep de API aan met de post methode en post in de API, die vervolgens wordt getoond in de index.ejs waar de get plaats vindt.
+plantRoute.post("/", (request, response) => {
+  const baseUrl = `${process.env.API_URL}/stekjes`;
+  postJson(baseUrl, request.body).then((data) => {
+    if (data.success) {
+      response.redirect("/"); // plant meegeven, message meegeven
+      // Toon opnieuw het formulier (met waarden) als het niet gelukt is
+    } else {
+      response.render("plantNew.ejs", { error: data.error }); // Fail, message meegeven
+    }
+    //   //  De waarden uit het formulier (niet de API)
+    console.log(JSON.stringify(request.body));
+  });
+});
+
+///
+
 **Client-side JS**
 
-Deze code is client-side JS die een klikfunctie toevoegt aan een mobile hamburger menu en wanneer erop wordt geklikt, worden de link vertical onder elkaar om de mobiele navigatie te activeren/ deactiveren.
+Deze code is client-side JS die een klikfunctie toevoegt aan een mobile hamburger menu en wanneer erop wordt geklikt, worden de link vertical onder elkaar om de mobiele navigatie te activeren/ deactiveren. 
 
 ```
 // MOBILE NAVIGATION TOGGLE
@@ -89,7 +124,6 @@ menuToggle.addEventListener("click", function () {
 });
 ```
 
-**Sever-side JS** 
 
 
 
