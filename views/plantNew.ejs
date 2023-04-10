@@ -2,8 +2,7 @@
 
     <form action="/" method="post">
         <fieldset class="drop-zone" enctype="multipart/form-data">
-            <input class="input-file" type="file" name="bestanden" id="file" accept=".jpeg,.jpg,.png" required
-                value="<% locals.fotos ?? '' %>">
+            <input class="input-file" type="file" name="bestanden" id="file" accept=".jpeg,.jpg,.png">
             <label for="file" class="drop-zone-label box__dragndrop">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
                     <path
@@ -44,8 +43,7 @@
 
 
             <label for="discripe">Omschrijving:</label>
-            <textarea type="text" rows="4" minlength="18" maxlength="200" required
-                placeholder="Vertel meer over je stekje"></textarea>
+            <textarea type="text" placeholder="Vertel meer over je stekje"></textarea>
             </div>
         </fieldset>
         <button type="submit">Stek doneren</button>

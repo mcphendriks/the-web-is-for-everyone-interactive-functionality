@@ -65,10 +65,9 @@ header {
 
 nav {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   height: 50px;
-  overflow: hidden;
 }
 
 .logo {
@@ -86,16 +85,6 @@ nav ul {
 
 nav li {
   padding: 0 1em 0 1em;
-}
-
-nav li:nth-child(4) {
-  padding: 0.2;
-  background-color: var(--filter-bg-clr);
-  border-radius: var(--radius-btn);
-}
-
-nav li a:nth-child(4) {
-  color: #fff;
 }
 
 ul a {
