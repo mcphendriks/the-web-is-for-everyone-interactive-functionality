@@ -82,7 +82,7 @@ Dit is een HTML-formulier met velden voor het uploaden van een afbeelding en het
 **Sever-side JS**  (CORE FUNCTIONALITEITEN AFHANDELN FORMULIER)
 
 ```
-// // haalt planten gegevens(data) op uit API
+ // haalt planten gegevens(data) op uit API
 plantRoute.get("/", (request, response) => {
   response.render("plantNew");
 });
@@ -107,7 +107,6 @@ plantRoute.post("/", (request, response) => {
     console.log(JSON.stringify(request.body));
   });
 });
-
 ```
 
 **Client-side JS**
